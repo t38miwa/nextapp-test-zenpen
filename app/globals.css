@@ -99,6 +99,16 @@ header * img{
   height: auto;
 }
 
+/*新たに追加*/
+.Header-title{
+  display: block;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 10rem;
+  font-weight: bold;
+  color: #fd9c51;
+}
+
 header * li{
   display: inline;
 }
@@ -112,7 +122,7 @@ header * li a{
   padding: 0.3rem 1.7rem;
   margin-left: 1rem;
   border-radius: 0.5rem;
-  background-image: linear-gradient( -20deg, #646464 0%, #646464 80%, #FFD873 80%, #FFD873 80%);
+  background-image: linear-gradient( -20deg, rgb(0, 149, 255) 0%, rgb(0, 149, 255) 80%, #fd9c51 80%, #fd9c51 80%);
   color: #fff;
   font-size: 1.6rem;
   font-weight: 400;
@@ -135,7 +145,9 @@ header * li a:hover{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 3rem;
+  /*background-color: rgb(0, 149, 255);*/
 }
+
 
 @media(max-width: 600px){ 
   .grid-container-in{
@@ -148,6 +160,7 @@ header * li a:hover{
   border-radius: 1rem;
   width: 100%;
   border: 0.05rem solid rgb(223, 223, 223);
+  background-color: rgb(0, 149, 255);
 }
 
 .grid-container-in > a:hover{
@@ -164,11 +177,11 @@ header * li a:hover{
 
 .grid-container-in > * > div {
   padding: 1.5rem 1.5rem;
-  color: #333;
+  color: rgb(223, 223, 223);
 }
 
 .grid-container-in > * > div  > h2{
-  color: #FF63A4;
+  color: #fd9c51;
   margin-bottom: 0.4rem;
 }
 
