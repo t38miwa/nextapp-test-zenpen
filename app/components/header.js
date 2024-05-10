@@ -1,13 +1,16 @@
-import Image from "next/image"
+//import Image from "next/image"
 import Link from "next/link"
 
 const Header = () => {
     return (
         <header>
             <div>
+            <a href="/" className="Header-title">NYKSaikenCommunity</a>
+                {/*
                 <Link href="/">
                     <Image src="/header.svg" width={1330} height={148} alt="header-image" priority/>
                 </Link>
+                */}
             </div>
             <nav>
                 <ul>
