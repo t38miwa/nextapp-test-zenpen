@@ -3,22 +3,30 @@ import { useState, useEffect } from "react"
 import useAuth from "../../../utils/useAuth"
 
 const UpdateItem = (context) => {
-    const [title, setTitle] = useState("")
-    const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
+    const [favorteam, setFavorTeam] = useState("")
+    const [favorplayer, setFavorPlayer] = useState("")
+    const [prefecture, setPrefecture] = useState("")
     const [description, setDescription] = useState("")
     const [email, setEmail] = useState("")
+
     const [loading, setLoading] = useState(false) 
 
     const loginUserEmail = useAuth() 
+
+    //const [title, setTitle] = useState("")
+    //const [price, setPrice] = useState("")
 
     useEffect(() => {
         const getSingleItem = async(id) => {
             const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"}) 
             const jsonData = await response.json() 
-            const singleItem = jsonData.singleItem         
-            setTitle(singleItem.title)
-            setPrice(singleItem.price)
+            const singleItem = jsonData.singleItem
+            setFavorTeam(singleItem.FavorTeam)
+            setFavorPlayer(singleItem.FavorPlayer)
+            setPrefecture(singleItem.prefecture)
+            //setTitle(singleItem.title)
+            //setPrice(singleItem.price)
             setImage(singleItem.image)
             setDescription(singleItem.description)
             setEmail(singleItem.email)
@@ -38,8 +46,12 @@ const UpdateItem = (context) => {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 },
                 body: JSON.stringify({
-                    title: title,
-                    price: price,
+
+                    //title: title,
+                    //price: price,
+                    favorteam: favorteam,
+                    favorplayer: favorplayer,
+                    prefecture: prefecture,
                     image: image,
                     description: description,
                     email: loginUserEmail 
@@ -58,7 +70,8 @@ const UpdateItem = (context) => {
             <div>
                 <h1 className="page-title">アイテム編集</h1>
                 <form onSubmit={handleSubmit}>
-                    <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>
+                    <input value={favorteam} onChange={(e) => setFavorTeam(e.target.value)} type="text" name="favorteam" placeholder="好きなチーム名" required/>
+                    <input value={favorplayer} onChange={(e) => setFavorPlayer(e.target.value)} type="text" name="favorplayer" placeholder="好きな選手名" required/>
                     <input value={price} onChange={(e) => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
                     <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
                     <textarea value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={15} placeholder="商品説明" required></textarea>

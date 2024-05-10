@@ -13,11 +13,13 @@ const ReadSingleItem = async(context) => {
     return (
         <div className="grid-container-si">
             <div>
-                <Image src={singleItem.image} width={750} height={500} alt="item-image" priority/>
+                <Image src={singleItem.Image} width={750} height={500} alt="item-image" priority/>
             </div>
             <div>
-                <h1>{singleItem.title}</h1>
-                <h2>¥{singleItem.price}</h2>
+                <h1>{singleItem.FavorTeam}</h1>
+                <h2>{singleItem.FavorPlayer}</h2>
+                <h3>{singleItem.prefecture}</h3>
+                <h3>{singleItem.email}</h3>
                 <hr/>
                 <p>{singleItem.description}</p>
                 <div>
