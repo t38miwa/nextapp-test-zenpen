@@ -49,10 +49,10 @@ const UpdateItem = (context) => {
 
                     //title: title,
                     //price: price,
-                    favorteam: favorteam,
-                    favorplayer: favorplayer,
+                    FavorTeam: favorteam,
+                    FavorPlayer: favorplayer,
                     prefecture: prefecture,
-                    image: image,
+                    Image: image,
                     description: description,
                     email: loginUserEmail 
                 })
@@ -72,7 +72,7 @@ const UpdateItem = (context) => {
                 <form onSubmit={handleSubmit}>
                     <input value={favorteam} onChange={(e) => setFavorTeam(e.target.value)} type="text" name="favorteam" placeholder="好きなチーム名" required/>
                     <input value={favorplayer} onChange={(e) => setFavorPlayer(e.target.value)} type="text" name="favorplayer" placeholder="好きな選手名" required/>
-                    <input value={price} onChange={(e) => setPrice(e.target.value)} type="text" name="price" placeholder="価格" required/>
+                    <input value={prefecture} onChange={(e) => setPrefecture(e.target.value)} type="text" name="prefecture" placeholder="都道府県" required/>
                     <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
                     <textarea value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={15} placeholder="商品説明" required></textarea>
                     <button>編集</button>

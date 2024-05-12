@@ -209,7 +209,7 @@ header * li a:hover{
 }
 
 .grid-container-si h2{
-  color: #FF63A4;
+  color: #fd9c51;
   margin: 1rem 0 2rem; 
 }
 
@@ -221,7 +221,7 @@ header * li a:hover{
   padding: 0.3rem 1.7rem;
   margin-right: 1rem;
   border-radius: 0.5rem;
-  background-image: linear-gradient( -20deg, #646464 0%, #646464 80%, #FF63A4 80%, #FF63A4 80%);
+  background-image: linear-gradient( -20deg, rgb(0, 149, 255) 0%, rgb(0, 149, 255) 80%, #fd9c51 80%, #fd9c51 80%);
   color: rgb(255, 255, 255);
   font-size: 1.6rem;
   font-weight: 400;
