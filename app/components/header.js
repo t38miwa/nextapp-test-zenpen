@@ -14,6 +14,7 @@ const Header = () => {
             </div>
             <nav>
                 <ul>
+                    <li><Link href="/map">NBA観戦できる店一覧</Link></li>
                     <li><Link href="/user/register">登録</Link></li>
                     <li><Link href="/user/login">ログイン</Link></li>
                     <li><Link href="/item/create">アイテム作成</Link></li>
