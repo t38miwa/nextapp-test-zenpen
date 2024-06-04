@@ -1,4 +1,4 @@
-// app/api/place/route.js
+{/*// app/api/place/route.js
 export async function GET(request) {
   console.log(request);
   const placeId = request.searchParams.get('placeId');
@@ -49,3 +49,4 @@ export async function GET(request) {
     });
   }
 }
+*/}
