@@ -246,7 +246,7 @@ const locations = [
     placeId: 'ChIJr7f6nvDlAGARiKNjkeMMkQ0' // 大阪の場所、実際のプレースIDを設定する必要があります
   },
   {
-    id: 'nagasaki', // 一意のID
+    id: 'nagasakisi', // 一意のID
     position: {
       lat: 32.74361402629554,
       lng: 129.87978740858682
