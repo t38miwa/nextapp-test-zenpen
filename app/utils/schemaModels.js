@@ -33,5 +33,25 @@ const UserSchema = new Schema({
     }
 })
 
+const AddressSchema = new Schema({
+    id: {
+        type: String,
+        required: true
+    },
+    lat: {
+        type: String,
+        required: true,
+    },
+    lng: {
+        type: String,
+        required: true,
+    },
+    placeID: {
+        type: String,
+        required: true
+    }
+})
+
 export const ItemModel = mongoose.models.Item || mongoose.model("Item", ItemSchema)
 export const UserModel = mongoose.models.User || mongoose.model("User", UserSchema)
+export const AddressModel = mongoose.models.Address || mongoose.model("Address", AddressSchema)
