@@ -46,7 +46,7 @@ const AddressSchema = new Schema({
         type: String,
         required: true,
     },
-    placeID: {
+    placeId: {
         type: String,
         required: true
     }
