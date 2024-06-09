@@ -172,6 +172,7 @@ header * li a:hover{
 .grid-container-in > a * img, .grid-container-in > a > img{
   width: 100%;
   height: auto;
+  max-height: 400px;
   border-radius: 1rem 1rem 0 0; 
 }
 

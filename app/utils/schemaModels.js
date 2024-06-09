@@ -52,6 +52,18 @@ const AddressSchema = new Schema({
     }
 })
 
+const EventSchema = new Schema({
+    Image: String,
+    title: String,       
+    keyword: String,
+    place: String, 
+    date: String,
+    team: String,
+    description: String,  
+    prefecture: String, 
+})
+
 export const ItemModel = mongoose.models.Item || mongoose.model("Item", ItemSchema)
 export const UserModel = mongoose.models.User || mongoose.model("User", UserSchema)
 export const AddressModel = mongoose.models.Address || mongoose.model("Address", AddressSchema)
+export const EventModel = mongoose.models.Event || mongoose.model("Event", EventSchema)
