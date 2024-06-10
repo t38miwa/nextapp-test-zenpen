@@ -373,3 +373,124 @@ footer{
     font-size: 14px; /* 小さい画面ではフォントサイズを少し小さく */
   }
 }
+
+/*eventpage用*/
+/* styles.css */
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.content {
+  width: 65%;
+}
+
+.search-container {
+  width: 30%;
+  margin-left: 20px;
+}
+
+.grid-event-container {
+  margin-top: 20px;
+}
+
+.event-instructions {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.event-instructions p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.event-item h2 {
+  color: #1a73e8; /* 青色 */
+}
+
+.event-item h3.keyword {
+  color: #fd9c51; /* オレンジ色 */
+}
+
+.event-item h3,
+.event-item p {
+  color: #000; /* 黒色 */
+  margin: 5px 0;
+}
+
+.event-item img {
+  width: 200px; /* 画像の幅を固定 */
+  height: 200px; /* 画像の高さを固定 */
+  object-fit: cover; /* アスペクト比を維持しつつ切り取る */
+  border-radius: 5px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.checkbox-container {
+  margin-top: 50px;
+  background-color: rgb(178, 238, 238);
+}
+
+.check-children {
+}
+
+.checkbox-container div {
+  margin-bottom: 10px;
+}
+
+.checkbox-container input {
+  margin-top:10px;
+  margin-right: 5px;
+}
+
+.checkbox-container label {
+  margin-left: 5px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #1a73e8;
+}
