@@ -17,7 +17,7 @@ const ReadSingleItem = async(context) => {
             </div>
             <div>
                         <h2>{singleItem.title}</h2>
-                        <h3>キーワード{singleItem.keyword}</h3>
+                        <h3>キーワード:{singleItem.keyword}</h3>
                         <h3>{singleItem.prefecture}: {singleItem.place}</h3>
                         <h3>日時{singleItem.date}</h3>
                         <h3>チーム{singleItem.team}</h3>
