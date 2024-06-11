@@ -61,6 +61,7 @@ const EventSchema = new Schema({
     team: String,
     description: String,  
     prefecture: String, 
+    email: String,
 })
 
 export const ItemModel = mongoose.models.Item || mongoose.model("Item", ItemSchema)
