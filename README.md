@@ -42,7 +42,7 @@ https://nextapp-test-zenpen.vercel.app/
 ## システム構成図
 今後追加いたしたます。
 
-##　ER図
+## ER図
 今後追加いたします。
 
 ## 今後の展望
