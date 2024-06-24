@@ -16,7 +16,7 @@ const ReadSingleItem = async(context) => {
                 <Image src={singleItem.Image} width={750} height={500} alt="item-image" priority/>
             </div>
             <div>
-                <h1>{singleItem.FavorTeam}</h1>
+                <h1>好きなチーム: {singleItem.FavorTeam}</h1>
                 <h2>{singleItem.FavorPlayer}</h2>
                 <h3>{singleItem.prefecture}</h3>
                 <h3>{singleItem.email}</h3>
