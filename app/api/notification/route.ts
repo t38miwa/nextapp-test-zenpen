@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import connectDB from "./../../utils/database";
+// @ts-expect-error TS(2305): Module '"./../../utils/schemaModels"' has no expor... Remove this comment to see the full error message
 import { NotificationModel } from "./../../utils/schemaModels";
 
 export async function GET() {

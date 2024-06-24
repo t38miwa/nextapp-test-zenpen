@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import connectDB from "../../../../utils/database"
 import { ItemModel } from "../../../../utils/schemaModels"
 
-export async function GET(request, context) {
+export async function GET(request: any, context: any) {
     try{
         await connectDB()
         await ItemModel.findById(context.params.id)

@@ -12,7 +12,7 @@ export async function GET() {
     }
 }
 
-export async function POST(request) {
+export async function POST(request: any) {
     const reqBody = await request.json()
 
     try{

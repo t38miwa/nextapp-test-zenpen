@@ -4,13 +4,25 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+type EventItem = {
+  _id: string;
+  Image: string;
+  title: string;
+  keyword: string;
+  place: string;
+  date: string;
+  team: string;
+  description: string;
+  prefecture: string;
+};
+
 const ReadAllItems = () => {
-  const [allItems, setAllItems] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [selectedKeywords, setSelectedKeywords] = useState([]);
-  const [selectedPrefecture, setSelectedPrefecture] = useState("");
-  const [selectedMonth, setSelectedMonth] = useState("");
+  const [allItems, setAllItems] = useState<EventItem[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [filteredItems, setFilteredItems] = useState<EventItem[]>([]);
+  const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
+  const [selectedPrefecture, setSelectedPrefecture] = useState<string>("");
+  const [selectedMonth, setSelectedMonth] = useState<string>("");
 
   const keywords = [
     "NBA", "Bリーグ", "W杯", "オリンピック", "プレイオフ", "ドラフト", "再建民オフ会", "試合観戦会"
@@ -50,7 +62,7 @@ const ReadAllItems = () => {
     setFilteredItems(results);
   };
 
-  const handleCheckboxChange = (keyword) => {
+  const handleCheckboxChange = (keyword: string) => {
     setSelectedKeywords(prev => 
       prev.includes(keyword) ? prev.filter(k => k !== keyword) : [...prev, keyword]
     );
@@ -87,55 +99,61 @@ const ReadAllItems = () => {
         </div>
       </div>
       <div className="search-container">
+  <input
+    type="text"
+    placeholder="検索キーワードを入力"
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+  <button onClick={handleSearch}>検索</button>
+  <div className="checkbox-container">
+    {keywords.map(keyword => (
+
+      <div className="check-children" key={keyword}>
+        <div className="checkbox">
         <input
-          type="text"
-          placeholder="検索キーワードを入力"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          type="checkbox"
+          id={keyword}
+          name={keyword}
+          value={keyword}
+          onChange={() => handleCheckboxChange(keyword)}
         />
-        <button onClick={handleSearch}>検索</button>
-        <div className="checkbox-container">
-          {keywords.map(keyword => (
-            <div className="check-children" key={keyword}>
-              <input
-                type="checkbox"
-                id={keyword}
-                name={keyword}
-                value={keyword}
-                onChange={() => handleCheckboxChange(keyword)}
-              />
-              <label htmlFor={keyword}>{keyword}</label>
-            </div>
-          ))}
         </div>
-        <div className="checkbox-container">
-          <label htmlFor="prefecture">都道府県:</label>
-          <select
-            id="prefecture"
-            value={selectedPrefecture}
-            onChange={(e) => setSelectedPrefecture(e.target.value)}
-          >
-            <option value="">選択してください</option>
-            {prefectures.map(pref => (
-              <option key={pref} value={pref}>{pref}</option>
-            ))}
-          </select>
-        </div>
-        <div className="checkbox-container">
-          <label htmlFor="month">年月:</label>
-          <select
-            id="month"
-            value={selectedMonth}
-            onChange={(e) => setSelectedMonth(e.target.value)}
-          >
-            <option value="">選択してください</option>
-            {months.map(month => (
-              <option key={month.value} value={month.value}>{month.label}</option>
-            ))}
-          </select>
+        <div className="checkbox-keyword">
+        <label htmlFor={keyword}>{keyword}</label>
         </div>
       </div>
-    </div>
+
+    ))}
+  </div>
+  <div className="checkbox-container">
+    <label htmlFor="prefecture">都道府県:</label>
+    <select
+      id="prefecture"
+      value={selectedPrefecture}
+      onChange={(e) => setSelectedPrefecture(e.target.value)}
+    >
+      <option value="">選択してください</option>
+      {prefectures.map(pref => (
+        <option key={pref} value={pref}>{pref}</option>
+      ))}
+    </select>
+  </div>
+  <div className="checkbox-container">
+    <label htmlFor="month">年月:</label>
+    <select
+      id="month"
+      value={selectedMonth}
+      onChange={(e) => setSelectedMonth(e.target.value)}
+    >
+      <option value="">選択してください</option>
+      {months.map(month => (
+        <option key={month.value} value={month.value}>{month.label}</option>
+      ))}
+    </select>
+  </div>
+</div>
+</div>
   );
 }
 

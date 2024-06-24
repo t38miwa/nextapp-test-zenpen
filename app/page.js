@@ -28,16 +28,6 @@ const ReadAllItems = () => {
 
     return (
         <div className="grid-container-in">
-            <div style={{ marginBottom: "20px" }}>
-                <input 
-                    type="text" 
-                    placeholder="好きなチームを検索" 
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    style={{ padding: "10px", width: "80%", boxSizing: "border-box" }}
-                />
-                <button onClick={handleSearch} style={{ padding: "10px" }}>検索</button>
-            </div>
             {filteredItems.map(item => 
                 <Link href={`/item/readsingle/${item._id}`} key={item._id}> 
                     <Image src={item.Image} width={750} height={500} alt="item-image" priority/>

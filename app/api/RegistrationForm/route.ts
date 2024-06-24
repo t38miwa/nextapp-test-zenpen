@@ -1,7 +1,8 @@
 import connectDB from "../../utils/database";
+// @ts-expect-error TS(2305): Module '"../../utils/schemaModels"' has no exporte... Remove this comment to see the full error message
 import { RegistrationModel, EventModel, NotificationModel } from "../../utils/schemaModels";
 
-export async function POST(req, res) {
+export async function POST(req: any, res: any) {
     const { eventId, name, contact } = await req.json();
     await connectDB();
 
@@ -27,6 +28,7 @@ export async function POST(req, res) {
         return new Response(JSON.stringify({ message: "Registration successful" }), { status: 200 });
     } catch (error) {
         console.error("Error during registration:", error);
+        // @ts-expect-error TS(2571): Object is of type 'unknown'.
         return new Response(JSON.stringify({ message: "Registration failed", error: error.message }), { status: 500 });
     }
 }

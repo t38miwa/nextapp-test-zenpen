@@ -3,7 +3,7 @@ import { SignJWT } from "jose"
 import connectDB from "../../../utils/database"
 import { UserModel } from "../../../utils/schemaModels"
 
-export async function POST(request) {
+export async function POST(request: any) {
     const reqBody = await request.json()
     try{
         await connectDB()
