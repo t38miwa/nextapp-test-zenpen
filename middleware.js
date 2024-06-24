@@ -13,7 +13,7 @@ export async function middleware(request) {
         const decodedJwt = await jwtVerify(token, secretKey)
         return NextResponse.next()
     }catch(err){
-        return NextResponse.json({message: "トークンが正しくないので、ログインしてください"})
+        return NextResponse.json({message: "ログインしてください"})
     }
 }
 

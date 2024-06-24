@@ -48,8 +48,8 @@ const CreateItem = () => {
                 <input value={favorteam} onChange={(e) => setFavorTeam(e.target.value)} type="text" name="favorteam" placeholder="好きなチーム名" required/>
                     <input value={favorplayer} onChange={(e) => setFavorPlayer(e.target.value)} type="text" name="favorplayer" placeholder="好きな選手名" required/>
                     <input value={prefecture} onChange={(e) => setPrefecture(e.target.value)} type="text" name="prefecture" placeholder="都道府県" required/>
-                    <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像" required/>
-                    <textarea value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={15} placeholder="商品説明" required></textarea>
+                    <input value={image} onChange={(e) => setImage(e.target.value)} type="text" name="image" placeholder="画像をアップロードして下さい" required/>
+                    <textarea value={description} onChange={(e) => setDescription(e.target.value)} name="description" rows={15} placeholder="詳細" required></textarea>
                     <button>作成</button>
                 </form>
             </div>
